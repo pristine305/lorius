@@ -128,6 +128,7 @@ export function whatsappOrderLink(order) {
  * ORDER_ENDPOINT when one is configured. Never throws: a failed POST still
  * returns a saved order, and the success page offers the WhatsApp fallback.
  */
+
 export async function placeOrder({ lines, subtotal, customer }) {
   const order = {
     orderNo: orderNumber(),
