@@ -17,7 +17,7 @@ export const PRICE = { '20': 249, '50': 499, '100': 999 }
 // the browser and the customer is handed a pre-filled WhatsApp message so the
 // order reaches you. Set it to a URL (Google Apps Script, Formspree, Zapier,
 // your own API) and the site will also POST the order there as JSON.
-export const ORDER_ENDPOINT = ''
+export const ORDER_ENDPOINT = `${import.meta.env.VITE_API_URL}/api/orders`
 
 // Full international format, digits only, no plus sign. Example: 919876543210
 export const WHATSAPP_NUMBER = '918796578969'

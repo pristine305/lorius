@@ -135,7 +135,7 @@ export async function placeOrder({ lines, subtotal, customer }) {
     deliveryFrom: DELIVERY_FROM,
     status: 'awaiting_payment_link',
     customer,
-    lines: lines.map((l) => ({
+    items: lines.map((l) => ({
       id: l.id, name: l.product.name, size: l.size,
       qty: l.qty, unit: l.unit, lineTotal: l.lineTotal,
     })),
