@@ -4,7 +4,7 @@
 
 // Pre-ordering opens 25 September 2026, 12:00 noon IST. Before this moment the
 // site shows a countdown and the order buttons are disabled.
-export const PREORDER_OPENS = new Date('2026-09-25T12:00:00+05:30')
+export const PREORDER_OPENS = new Date('2026-09-25T10:00:00+05:30')
 
 // First deliveries go out from this date.
 export const DELIVERY_FROM = '23 October 2026'
