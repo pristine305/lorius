@@ -41,7 +41,7 @@ export default function OrderPlaced() {
 
         <table className="orderlines">
           <tbody>
-            {order.lines.map((l) => (
+            {order?.lines?.map((l) => (
               <tr key={l.id + l.size}>
                 <td>{l.name} <span className="muted">{l.size} ml &times; {l.qty}</span></td>
                 <td>{inr(l.lineTotal)}</td>
