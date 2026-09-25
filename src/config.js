@@ -20,7 +20,7 @@ export const PRICE = { '20': 249, '50': 499, '100': 999 }
 export const ORDER_ENDPOINT = ''
 
 // Full international format, digits only, no plus sign. Example: 919876543210
-export const WHATSAPP_NUMBER = '919999999999'
+export const WHATSAPP_NUMBER = '918796578969'
 
 export const SUPPORT_EMAIL = 'care@loriusperfume.com'
 
