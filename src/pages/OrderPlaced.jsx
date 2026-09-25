@@ -6,6 +6,7 @@ export default function OrderPlaced() {
   const { orderNo } = useParams()
   const order = getOrder(orderNo)
 
+  console.log(order);
   if (!order) {
     return (
       <div className="wrap sec">
@@ -51,12 +52,17 @@ export default function OrderPlaced() {
           </tbody>
         </table>
 
-        {(!ORDER_ENDPOINT || !order.sent) && (
           <div className="sendbox">
             <p>Send us the order on WhatsApp so we can confirm it faster.</p>
-            <a className="btn" href={whatsappOrderLink(order)} target="_blank" rel="noopener">Send on WhatsApp</a>
+            <a
+              className="btn"
+              href={whatsappOrderLink(order)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Send on WhatsApp
+            </a>
           </div>
-        )}
 
         <p className="muted" style={{ marginTop: 32, fontSize: 14 }}>
           Keep your order number. Questions? Email {SUPPORT_EMAIL}.

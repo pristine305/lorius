@@ -107,7 +107,15 @@ function orderNumber() {
 }
 
 export function whatsappOrderLink(order) {
-  const rows = order.lines.map((l) => `${l.qty} x ${l.name} ${l.size} ml - ${inr(l.lineTotal)}`)
+  const items = order.lines || order.items || []
+
+  const rows = items.map((l) => {
+    const size = l.size ? ` ${l.size} ml` : ''
+    const lineTotal = l.lineTotal ?? l.line ?? 0
+
+    return `${l.qty} x ${l.name}${size} - ${inr(lineTotal)}`
+  })
+
   const text = [
     `Pre-order ${order.orderNo}`,
     '',
@@ -118,11 +126,11 @@ export function whatsappOrderLink(order) {
     `Name: ${order.customer.name}`,
     `Phone: ${order.customer.phone}`,
     `Email: ${order.customer.email}`,
-    `Address: ${order.customer.address}, ${order.customer.city} ${order.customer.pincode}`,
+    `Address: ${order.customer.address}, ${order.customer.city}, ${order.customer.state} ${order.customer.pincode}`,
   ].join('\n')
+
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
 }
-
 /**
  * Builds the order, stores it locally so nothing is ever lost, and POSTs it to
  * ORDER_ENDPOINT when one is configured. Never throws: a failed POST still
