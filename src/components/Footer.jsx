@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { SOCIAL, SUPPORT_EMAIL } from '../config'
 import { PRODUCTS } from '../data/products'
+import { POLICIES } from '../pages/policies'
 import { Instagram, Facebook, X, LinkedIn } from './Icons'
 import { useCart } from '../context/CartContext'
 
@@ -60,6 +61,12 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        
+        <nav className="legal-row" aria-label="Policies">
+          {POLICIES.map((p) => (
+            <Link key={p.slug} to={`/${p.slug}`}>{p.title}</Link>
+          ))}
+        </nav>
 
         <div className="fbot">
           <span>Pre-order now. Deliveries from 23 October 2026.</span>

@@ -347,6 +347,8 @@ form.done input,form.done button{display:none}
 .page.on{display:block}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+
+
 /* ---------- laptop ---------- */
 @media (max-width:1180px){
   :root{--side:48px}
@@ -467,4 +469,58 @@ form.done input,form.done button{display:none}
 @media (max-width:768px){
   .ordermeta>div{grid-template-columns:1fr;gap:4px}
   .summary{padding:22px 18px}
+}
+
+
+
+/* ===================== policy pages ===================== */
+.policy{padding:56px 0 24px}
+.policy .wrap{max-width:860px}
+.policy h1{font-family:var(--serif);font-size:40px;font-weight:300;line-height:1.15;letter-spacing:.4px;margin-bottom:10px}
+.policy .meta{color:var(--soft);font-size:14px;margin-bottom:8px}
+.policy .entity{background:var(--mist);padding:18px 20px;margin:24px 0 8px;font-size:14.5px;line-height:1.65}
+.policy .entity b{font-weight:500}
+.policy h2{font-family:var(--serif);font-size:25px;font-weight:400;line-height:1.25;margin:44px 0 12px;scroll-margin-top:130px}
+.policy h3{font-size:16px;font-weight:500;margin:26px 0 8px}
+.policy p,.policy li{color:var(--muted)}
+.policy p{margin:0 0 14px}
+.policy ul,.policy ol{margin:0 0 16px;padding-left:22px}
+.policy li{margin-bottom:8px}
+.policy strong{color:var(--ink);font-weight:500}
+.policy a{color:inherit}
+.policy a:hover{color:var(--foil)}
+.policy table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:14.5px}
+.policy th,.policy td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;color:var(--muted)}
+.policy th{background:var(--mist);color:var(--ink);font-weight:500}
+.policy .toc{background:var(--mist);padding:22px 24px;margin:28px 0 8px}
+.policy .toc h2{margin:0 0 12px;font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--ink)}
+.policy .toc ol{columns:2;column-gap:32px;margin:0;padding-left:20px;font-size:14.5px}
+.policy .toc a{text-decoration:none;color:var(--muted)}
+.policy .note{border-left:3px solid var(--foil);background:var(--mist);padding:14px 18px;margin:20px 0;font-size:14.5px}
+.policy .note p:last-child{margin-bottom:0}
+/* unfilled items must be impossible to miss before the gateway application */
+.policy .fill{background:#FFF3CD;border:1px solid #E0A800;color:#6B4E00;padding:1px 7px;
+  font-size:13px;font-weight:500;white-space:nowrap;border-radius:2px}
+.policy .policy-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin:56px 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.policy .policy-links a{font-size:14px;color:var(--muted);text-decoration:none}
+.policy .policy-links a[aria-current]{color:var(--ink);font-weight:500}
+
+.legal-row{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0 0 24px}
+.legal-row a{font-size:13px;color:var(--soft);text-decoration:none}
+.legal-row a:hover{color:var(--foil)}
+
+@media (max-width:768px){
+  .policy{padding-top:32px}
+  .policy h1{font-size:30px}
+  .policy h2{font-size:21px;scroll-margin-top:110px}
+  .policy .toc ol{columns:1}
+  .policy .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .policy .scroll table{min-width:520px}
+  .policy table{font-size:13.5px}
+  .policy th,.policy td{padding:8px 9px}
+}
+@media print{
+  .top,.foot,.drawer,.scrim,.policy .toc,.policy .policy-links{display:none!important}
+  .policy{padding:0}
+  .policy p,.policy li,.policy td,.policy th{color:#000}
 }

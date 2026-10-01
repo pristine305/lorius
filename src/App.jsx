@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout'
 import OrderPlaced from './pages/OrderPlaced'
 import About from './pages/About'
 import Membership from './pages/Membership'
+import { POLICIES } from './pages/policies'
 import { useCart } from './context/CartContext'
 
 function ScrollToTop() {
@@ -34,6 +35,10 @@ export default function App() {
           <Route path="/order/:orderNo" element={<OrderPlaced />} />
           <Route path="/about" element={<About />} />
           <Route path="/membership" element={<Membership />} />
+           {/* Policy pages. Routes come from one list, so adding a policy needs one entry. */}
+          {POLICIES.map(({ slug, Component }) => (
+            <Route key={slug} path={`/${slug}`} element={<Component />} />
+          ))}
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
